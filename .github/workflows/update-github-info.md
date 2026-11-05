@@ -20,6 +20,7 @@ network:
   allowed:
     - github.com
     - github.blog
+    - awesome-copilot.github.com
 engine:
   id: copilot
   copilot-sdk: true
@@ -33,7 +34,10 @@ Review the latest useful items from these official sources:
 
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
+- Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
-Update `site/content/github-info.md` only with concise, practical information that helps developers learn GitHub faster. Verify each claim against its source and mention the GitHub Blog or GitHub Changelog source when using it. Do not invent details or repeat stale information.
+Use `web-fetch` to fetch https://awesome-copilot.github.com/workflows/.
 
-Prepare a draft pull request for Mona to review, with a title mentioning Mona or GitHub Info and a body that summarizes the proposed changes and links to their sources. Do not publish the updates or write directly to `main`; use the configured `safe-outputs` `create-pull-request` only. If neither source has a relevant, verifiable update, or there is no meaningful change to make, call `noop` with a brief explanation.
+Update `site/content/github-info.md` only with concise, practical information that helps developers learn GitHub faster. Verify each claim against its source and mention the GitHub Blog, GitHub Changelog, or Awesome Copilot workflows source when using it. Do not invent details or repeat stale information.
+
+Prepare a draft pull request for Mona to review, with a title mentioning Mona or GitHub Info and a body that summarizes the proposed changes and links to their sources. Do not publish the updates or write directly to `main`; use the configured `safe-outputs` `create-pull-request` only. If none of the sources has a relevant, verifiable update, or there is no meaningful change to make, call `noop` with a brief explanation.
